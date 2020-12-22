@@ -11,6 +11,7 @@ public class TestAPItuchon {
         if(url.contains("signup")) {
             ChonTestAPISignUp.link = url; //gán link url gọi API signUp
             System.out.println(url); //kiểm tra lại link url
+            System.out.println("Nhập tài khoản chưa đăng ký");
             ChonTestAPISignUp.TestSignUp(); //Chọn Test Case muốn test với API Sign Up, sau đó thực thi test case đã chọn
 
         } else if (url.contains("login")) {
@@ -23,10 +24,16 @@ public class TestAPItuchon {
             String loginlink1 = url.replace("logout", "login"); //gán link url gọi tới API login
             ChonTestAPILogOut.loginlink = loginlink1;
 
+
             //Đăng nhập tài khoản đã có để thực thi test case
             System.out.println("Đăng nhập tài khoản: ");
             Input.Login.nhap();
             System.out.println(url);
+
+            String getvflink = url.replace("logout", "get_verify_code");
+            String checkvflink = url.replace("logout", "check_verify_code");
+            ResponseGet_verify_code resget = callAPI.callAPIGVC(Input.Login.phonenumber, getvflink);
+            ResponseCheck_verify_code rescheck = callAPI.callAPCheckVC(Input.Login.phonenumber, resget.data.verifycode, checkvflink);
 
             //Chọn test case và thực thi test case đã chọn
             System.out.println("Chọn trường hợp test api log out: ");
@@ -49,8 +56,8 @@ public class TestAPItuchon {
 
         } else if (url.contains("block")) {
             ChonTestAPISetBlock.link = url;
-            String loginlink1 = url.replace("user/block", "login");
-            String signuplink = url.replace("user/block", "signup");
+            String loginlink1 = url.replace( "set_block", "login");
+            String signuplink = url.replace("set_block", "signup");
             System.out.println(url);
             System.out.println(loginlink1);
             System.out.println(signuplink);
@@ -59,10 +66,8 @@ public class TestAPItuchon {
             ChonTestAPISetBlock.signupLink = signuplink;
 
             //Đăng ký tài khoản mới để thực thi test case
-            System.out.println("Đăng ký tài khoản mới");
+            System.out.println("Đăng nhập tài khoản");
             Input.SignUp.nhap();
-            Response ressign = callAPI.callAPISignUp(Input.SignUp.phonenumber, Input.SignUp.password, Input.SignUp.uuid, signuplink);
-
             //Chọn test case và thực thi test case đã chọn
             ChonTestAPISetBlock.TestSetBlock();
         } else if(url.contains("get_verify_code")){
@@ -83,6 +88,14 @@ public class TestAPItuchon {
             ChonTestAPICheck_verify_code.verifycode = resget.data.verifycode;
 
             ChonTestAPICheck_verify_code.TestCheck_verify_code();;
+
+        } else if (url.contains("set_accept_friend")){
+            ChonTestAPISetAcceptFriend.link = url;
+            String loginlink = url.replace("set_accept_friend", "login");
+            ChonTestAPISetAcceptFriend.loginlink = loginlink;
+            Input.Login.nhap();
+
+            ChonTestAPISetAcceptFriend.TestSetAcceptFriend();
 
 
         }

@@ -15,13 +15,13 @@ public class ChonAPI {
     //giao diện
     public int giaodien() {
         System.out.println("Nhập 1 chọn API SIGN_UP:\n" +
-                "Nhập 2 chọn API LOG_IN: \n" +
-                "Nhập 3 chọn API LOG_OUT :\n" +
-                "Nhập 4 chọn API CHANGE_PASS:\n" +
-                "Nhập 5 chọn API SET_BLOCK:\n" +
-                "Nhập 6 chọn API CHECK_NEW_VERSION\n" +
-                "Nhập 7 chọn API GET_VERIFY_CODE\n" +
-                "Nhập 8 chọn API CHECK_VERIFY_CODE\n" +
+                "Nhập 2 chọn API GET_VERIFY_CODE\n" +
+                "Nhập 3 chọn API CHECK_VERIFY_CODE\n" +
+                "Nhập 4 chọn API LOG_IN: \n" +
+                "Nhập 5 chọn API LOG_OUT :\n" +
+                "Nhập 6 chọn API CHANGE_PASS:\n" +
+                "Nhập 7 chọn API SET_BLOCK:\n" +
+                "Nhập 8 chọn API CHECK_NEW_VERSION\n" +
                 "Nhập 9 chọn API GET_POST\n" +
                 "Nhập 10 chọn API SET_ACCEPT_FRIEND\n" +
                 "Nhập 11 chọn API SEARCH\n" +
@@ -40,25 +40,25 @@ public class ChonAPI {
                 url = Constant.APInhom1.SIGN_UP;
                 break;
             case 2:
-                url = Constant.APInhom1.LOG_IN;
-                break;
-            case 3:
-                url = Constant.APInhom1.LOG_OUT;
-                break;
-            case 4:
-                url = Constant.APInhom1.CHANGE_PASS;
-                break;
-            case 5:
-                url = Constant.APInhom1.SET_BLOCK;
-                break;
-            case 6:
-                url = Constant.APInhom1.CHECK_NEW_VERSION;
-                break;
-            case 7:
                 url = Constant.APInhom1.GET_VERIFY_CODE;
                 break;
-            case 8:
+            case 3:
                 url = Constant.APInhom1.CHECK_VERIFY_CODE;
+                break;
+            case 4:
+                url = Constant.APInhom1.LOG_IN;
+                break;
+            case 5:
+                url = Constant.APInhom1.LOG_OUT;
+                break;
+            case 6:
+                url = Constant.APInhom1.CHANGE_PASS;
+                break;
+            case 7:
+                url = Constant.APInhom1.SET_BLOCK;
+                break;
+            case 8:
+                url = Constant.APInhom1.CHECK_NEW_VERSION;
                 break;
             case 9:
                 url = Constant.APInhom1.GET_POST;
@@ -88,26 +88,26 @@ public class ChonAPI {
                 url = Constant.APInhom2.SIGN_UP;
                 break;
             case 2:
-                url = Constant.APInhom2.LOG_IN;
-                break;
-            case 3:
-                url = Constant.APInhom2.LOG_OUT;
-                break;
-            case 4:
-                url = Constant.APInhom2.CHANGE_PASS;
-                break;
-            case 5:
-                url = Constant.APInhom2.SET_BLOCK;
-                break;
-            case 6:
-                url = "";
-                System.out.println("Không tồn tại link gọi tới API này");
-                break;
-            case 7:
                 url = Constant.APInhom2.GET_VERIFY_CODE;
                 break;
-            case 8:
+            case 3:
                 url = Constant.APInhom2.CHECK_VERIFY_CODE;
+                break;
+            case 4:
+                url = Constant.APInhom2.LOG_IN;
+                break;
+            case 5:
+                url = Constant.APInhom2.LOG_OUT;
+                break;
+            case 6:
+                url = Constant.APInhom2.CHANGE_PASS;
+                break;
+            case 7:
+                url = Constant.APInhom2.SET_BLOCK;
+                break;
+            case 8:
+                url = "";
+                System.out.println("Không tồn tại link gọi tới API này");
                 break;
             case 9:
                 url = Constant.APInhom2.GET_POST;
@@ -136,26 +136,26 @@ public class ChonAPI {
                 url = Constant.APInhom3.SIGN_UP;
                 break;
             case 2:
-                url = Constant.APInhom3.LOG_IN;
-                break;
-            case 3:
-                url = Constant.APInhom3.LOG_OUT;
-                break;
-            case 4:
-                url = Constant.APInhom3.CHANGE_PASS;
-                break;
-            case 5:
-                url = Constant.APInhom3.SET_BLOCK;
-                break;
-            case 6:
-                url = "";
-                System.out.println("Không tồn tại link gọi tới API này");
-                break;
-            case 7:
                 url = Constant.APInhom3.GET_VERIFY_CODE;
                 break;
-            case 8:
+            case 3:
                 url = Constant.APInhom3.CHECK_VERIFY_CODE;
+                break;
+            case 4:
+                url = Constant.APInhom3.LOG_IN;
+                break;
+            case 5:
+                url = Constant.APInhom3.LOG_OUT;
+                break;
+            case 6:
+                url = Constant.APInhom3.CHANGE_PASS;
+                break;
+            case 7:
+                url = Constant.APInhom3.SET_BLOCK;
+                break;
+            case 8:
+                url = "";
+                System.out.println("Không tồn tại link gọi tới API này");
                 break;
             case 9:
                 url = Constant.APInhom3.GET_POST;
@@ -184,31 +184,34 @@ public class ChonAPI {
                 url = Constant.APInhom4.SIGN_UP;
                 break;
             case 2:
-                url = Constant.APInhom4.LOG_IN;
-                break;
-            case 3:
-                url = Constant.APInhom4.LOG_OUT;
-                break;
-            case 4:
-                url = Constant.APInhom4.CHANGE_PASS;
-                break;
-            case 5:
-                url = "Constant.APInhom4.SET_BLOCK không tồn tại";
-                break;
-            case 6:
-                url = "Constant.APInhom4.CHECK_NEW_VERSION không tồn tại";
-                break;
-            case 7:
                 url = Constant.APInhom4.GET_VERIFY_CODE;
                 break;
-            case 8:
+            case 3:
                 url = Constant.APInhom4.CHECK_VERIFY_CODE;
+                break;
+            case 4:
+                url = Constant.APInhom4.LOG_IN;
+                break;
+            case 5:
+                url = Constant.APInhom4.LOG_OUT;
+                break;
+            case 6:
+                url = Constant.APInhom4.CHANGE_PASS;
+                break;
+            case 7:
+                url = "";
+                System.out.println("link tới API SET_BLOCK không tồn tại");
+                break;
+            case 8:
+                url = "";
+                System.out.println("Link tới API CHECK_NEW_VERSION không tồn tại");
                 break;
             case 9:
                 url = Constant.APInhom4.GET_POST;
                 break;
             case 10:
-                url = "Constant.APInhom4.SET_ACCEPT_FRIEND không tồn tại";
+                url = "";
+                System.out.println("Không tồn tại link gọi tới API này");
                 break;
             case 11:
                 url = Constant.APInhom4.SEARCH;
@@ -230,26 +233,25 @@ public class ChonAPI {
             case 1:
                 url = Constant.APInhom5.SIGN_UP;
                 break;
-            case 2:
+            case 4:
                 url = Constant.APInhom5.LOG_IN;
                 break;
-            case 3:
+            case 5:
                 url = Constant.APInhom5.LOG_OUT;
                 break;
-            case 4:
+            case 6:
                 url = Constant.APInhom5.CHANGE_PASS;
                 break;
-            case 5:
+            case 7:
                 url = "Constant.APInhom5.SET_BLOCK không tồn tại";
                 break;
-            case 6:
-                url = "";
-                System.out.println("Không tồn tại link gọi tới API này");
+            case 8:
+                url = Constant.APInhom5.CHECK_NEW_VERSION;
                 break;
-            case 7:
+            case 2:
                 url = Constant.APInhom5.GET_VERIFY_CODE;
                 break;
-            case 8:
+            case 3:
                 url = Constant.APInhom5.CHECK_VERIFY_CODE;
                 break;
             case 9:
@@ -278,25 +280,25 @@ public class ChonAPI {
             case 1:
                 url = Constant.APInhom6.SIGN_UP;
                 break;
-            case 2:
+            case 4:
                 url = Constant.APInhom6.LOG_IN;
                 break;
-            case 3:
+            case 5:
                 url = Constant.APInhom6.LOG_OUT;
                 break;
-            case 4:
+            case 6:
                 url = "Constant.APInhom6.CHANGE_PASS không tồn tại";
                 break;
-            case 5:
+            case 7:
                 url = "Constant.APInhom6.SET_BLOCK không tồn tại";
                 break;
-            case 6:
+            case 8:
                 url = "Constant.APInhom6.CHECK_NEW_VERSION không tồn tại";
                 break;
-            case 7:
+            case 3:
                 url = "Constant.APInhom6.GET_VERIFY_CODE không tồn tại";
                 break;
-            case 8:
+            case 2:
                 url = "Constant.APInhom6.CHECK_VERIFY_CODE";
                 break;
             case 9:

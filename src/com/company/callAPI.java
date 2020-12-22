@@ -193,4 +193,34 @@ public class callAPI {
             con.disconnect();
         }
     }
+
+    public static Response callAPSet_Accept_Friend(String token, String user_id, String is_accepted, String linkurl) throws Exception{
+        URL url = new URL(linkurl +
+                "?token=" + token
+                + "&user_id=" + user_id
+                + "&is_accept=" + is_accepted);
+        System.out.println("CALL API: " + url);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+        connection.setRequestMethod("POST");
+        connection.setDoOutput(true);
+        try (DataOutputStream writer = new DataOutputStream(connection.getOutputStream())) {
+
+            StringBuilder content;
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(connection.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+            Gson g = new Gson();
+            System.out.println(content.toString());
+            return g.fromJson(content.toString(), Response.class);
+        } finally {
+            connection.disconnect();
+        }
+    }
 }

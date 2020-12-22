@@ -54,8 +54,8 @@ public class ChonTestAPILogin {
                     TestCaseLogin.Unittest4(Input.Login.phonenumber, Input.Login.password, Input.Login.uuid, link);
                     break;
                 case 5:
-                    Input.Login.nhap();
-                    TestCaseLogin.Unittest5(Input.Login.phonenumber, Input.Login.password, Input.Login.uuid, link);
+                    System.out.println("Thiếu tham số số điện thoại và mật khẩu");
+                    TestCaseLogin.Unittest5("","", "2e092750-4079-11eb-b378-0242ac130002", link);
                     break;
                 case 6:
                     Input.Login.nhap();
@@ -80,3 +80,9 @@ public class ChonTestAPILogin {
         }
     }
 }
+
+//0987556334
+//Password:
+//yutrfgh
+//UUID:
+//cc1cab06-4079-11eb-b378-0242ac130002

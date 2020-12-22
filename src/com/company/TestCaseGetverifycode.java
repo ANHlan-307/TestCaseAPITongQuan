@@ -1,5 +1,8 @@
 package com.company;
 
+//Class contains test cases of api get verify code
+//5 test cases
+
 public class TestCaseGetverifycode {
     public static void Unittest1( String linkurl) throws Exception{
         System.out.println("Get verify code success");
@@ -28,7 +31,7 @@ public class TestCaseGetverifycode {
         ResponseGet_verify_code resget2 = callAPI.callAPIGVC(Input.SignUp.phonenumber.replace("9", "8"), linkurl);
 
         System.out.println("Test case 4: Phonenumber has not been in the DB");
-        if ((!"1004".equals(resget2.code)) || (!"9995".equals(resget2.code))) throw new AssertionError("wrong code");
+        if ((!"1004".equals(resget2.code)) && (!"9995".equals(resget2.code))) throw new AssertionError("wrong code");
         if ((!"Parameter value is invalid".equals(resget2.message))) throw new AssertionError("wrong message");
 
         System.out.println("Finished");

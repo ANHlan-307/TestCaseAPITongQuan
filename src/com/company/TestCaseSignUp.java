@@ -12,7 +12,7 @@ public class TestCaseSignUp {
     }
 
     public static void Unittest2(String phonenumber, String password, String uuid, String url) throws Exception{
-        System.out.println("Test case 2: ");
+        System.out.println("Test case 2: User Existed");
         Response res = callAPI.callAPISignUp(phonenumber, password, uuid, url);
         if (!"9996".equals(res.code)) throw new AssertionError("wrong code");
         if ((!"User existed".equals(res.message))) throw new AssertionError("wrong message");

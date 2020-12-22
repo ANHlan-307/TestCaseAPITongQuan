@@ -15,24 +15,24 @@ public class TestCaseLogin {
     public static void Unittest2(String phonenumber, String password, String uuid, String linkurl) throws Exception{
         System.out.println("Test Case 2: Phonenumber does not exist");
         ResponseLogin res = callAPI.callAPILogin(phonenumber, password, uuid, linkurl);
-        if ((!"1004".equals(res.code))) throw new AssertionError("wrong code");
-        if ((!"Parameter value is invalid".equals(res.message))) throw new AssertionError("wrong message");
+        if ((!"9995".equals(res.code))) throw new AssertionError("wrong code");
+        if ((!"User is not validated".equals(res.message))) throw new AssertionError("wrong message");
         System.out.println("Finished");
     }
 
     public static void Unittest3(String phonenumber, String password, String uuid, String linkurl) throws Exception{
         System.out.println("Unit test 3: Invalid Phonenumber");
         ResponseLogin res = callAPI.callAPILogin(phonenumber, password, uuid, linkurl);
-        if ((!"1003".equals(res.code))) throw new AssertionError("wrong code");
-        if ((!"Parameter type is invalid".equals(res.message))) throw new AssertionError("wrong message");
+        if ((!"1003".equals(res.code)) && (!"9995".equals(res.code))) throw new AssertionError("wrong code");
+        if ((!"Parameter type is invalid".equals(res.message)) && (!"User is not validated".equals(res.message))) throw new AssertionError("wrong message");
         System.out.println("Finished!");
     }
 
     public static void Unittest4(String phonenumber, String password, String uuid, String linkurl) throws Exception{
         System.out.println("Test Case 4: Invalid password");
         ResponseLogin res = callAPI.callAPILogin(phonenumber, password, uuid, linkurl);
-        if ((!"1003".equals(res.code))) throw new AssertionError("wrong code");
-        if ((!"Parameter type is invalid".equals(res.message))) throw new AssertionError("wrong message");
+        if ((!"1003".equals(res.code)) && (!"9995".equals(res.code))) throw new AssertionError("wrong code");
+        if ((!"Parameter type is invalid".equals(res.message)) && (!"User is not validated".equals(res.message))) throw new AssertionError("wrong message");
         System.out.println("Finished!");
     }
 

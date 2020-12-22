@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class ChonTestAPILogOut {
     static String loginlink;
-    static String token;
     static String link;
     public static void TestLogout() throws Exception {
         boolean k = true;
@@ -29,16 +28,16 @@ public class ChonTestAPILogOut {
 
             switch (pick) {
                 case 1:
-                    TestCaseLogout.Unittest1(token, link, loginlink);
+                    TestCaseLogout.Unittest1(  link, loginlink);
                     break;
                 case 2:
-                    TestCaseLogout.UnitTest2(token,link, loginlink);
+                    TestCaseLogout.UnitTest2( link, loginlink);
                     break;
                 case 3:
-                    TestCaseLogout.UnitTest3(token, link, loginlink);
+                    TestCaseLogout.UnitTest3( link, loginlink);
                     break;
                 case 4:
-                    TestCaseLogout.UnitTest4(token, link, loginlink);
+                    TestCaseLogout.UnitTest4( link, loginlink);
                     break;
                 default:
                     k = false;

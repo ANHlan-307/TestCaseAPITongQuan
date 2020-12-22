@@ -45,7 +45,19 @@ public class ChonTestAPISetBlock {
                     TestCaseSetBlock.Unittest5(link, loginlink);
                     break;
                 case 6:
-                    TestCaseSetBlock.Unittest6(link, loginlink, signupLink);
+                    TestCaseSetBlock.Unittest6(link, loginlink);
+                    break;
+                case 7:
+                    TestCaseSetBlock.Unittest7(link, loginlink);
+                    break;
+                case 8:
+                    TestCaseSetBlock.Unittest8(link, loginlink);
+                    break;
+                case 9:
+                    TestCaseSetBlock.Unittest9(link, loginlink);
+                    break;
+                case 10:
+                    TestCaseSetBlock.Unittest10(link, loginlink);
                     break;
                  default:
                     k = false;

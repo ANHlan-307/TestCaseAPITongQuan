@@ -47,8 +47,8 @@ public class ChonTestAPISignUp {
                     TestCaseSignUp.Unittest4(Input.SignUp.phonenumber, Input.SignUp.password, Input.SignUp.uuid, link);
                     break;
                 case 5:
-                    Input.SignUp.nhap();
-                    TestCaseSignUp.Unittest5(Input.SignUp.phonenumber, Input.SignUp.password, Input.SignUp.uuid, link);
+                    System.out.println("Chưa truyền tham số");
+                    TestCaseSignUp.Unittest5("","", "", link);
                     break;
                 case 6:
                     k = false;
