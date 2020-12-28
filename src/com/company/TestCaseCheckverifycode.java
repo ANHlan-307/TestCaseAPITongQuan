@@ -12,8 +12,6 @@ public class TestCaseCheckverifycode {
         if ((!"OK".equals(rescheck.message))) throw new AssertionError("wrong message");
         System.out.println("Finished");
 
-        String loginlink = linkurl.replace("check_verify_code", "login");
-        ResponseLogin reslog = callAPI.callAPILogin(Input.SignUp.phonenumber, Input.SignUp.password, Input.SignUp.uuid, loginlink);
 
     }
 
@@ -59,7 +57,7 @@ public class TestCaseCheckverifycode {
 
         ResponseGet_verify_code resget = callAPI.callAPIGVC(Input.SignUp.phonenumber, get_verify_codelink);
 
-        verifycode = resget.data.verifycode;
+        verifycode = resget.data.verifyCode;
         ResponseCheck_verify_code rescheck = callAPI.callAPCheckVC(phonenumber, verifycode, linkurl);
 
         if ((!"1004".equals(rescheck.code)) && (!"9996".equals(rescheck.code))) throw new AssertionError("wrong code");

@@ -4,7 +4,18 @@ package com.company;
 //phonenumber = 0145667889
 //password = thankbut2
 //uuid = c8fa4694-40c5-11eb-b378-0242ac130002
-
+//Phonenumber:
+//0167889564
+//Password:
+//tyuioef2
+//UUID:
+//75e797e6-4655-11eb-b378-0242ac130002
+//Phonenumber:
+//0156774338
+//Password:
+//tgfyuhg6
+//UUID:
+//75e797e6-4655-11eb-b378-0242ac130002
 
 public class TestAPItudong {
     public static void giaodientudong() throws Exception {
@@ -13,6 +24,7 @@ public class TestAPItudong {
         System.out.println(url);
         if (url.contains("signup")) {
             System.out.println(url); //kiểm tra lại link url
+            System.out.println("Đăng ký tài khoản");
             Input.SignUp.nhap();
             TestCaseSignUp.Unittest1(Input.SignUp.phonenumber, Input.SignUp.password, Input.SignUp.uuid, url);
             TestCaseSignUp.Unittest2(Input.SignUp.phonenumber, Input.SignUp.password, Input.SignUp.uuid, url);
@@ -22,11 +34,8 @@ public class TestAPItudong {
         } else if(url.contains("get_verify_code")) {
             ChonTestAPIGetverifycode.link = url;
             String signuplink = url.replace("get_verify_code", "signup");
+            System.out.println("Đăng ký tài khoản");
             Input.SignUp.nhap();
-            System.out.println("Sử dụng tài khoản đã được đăng ký:");
-            System.out.println("Phonenumber: 0998765432");
-            System.out.println("Password: thanksyou01");
-            System.out.println("uuid: 04778e8c-40c8-11eb-b378-0242ac130002");
             Response res = callAPI.callAPISignUp(Input.SignUp.phonenumber, Input.SignUp.password, Input.SignUp.uuid, signuplink);
             TestCaseGetverifycode.Unittest1(url);
             TestCaseGetverifycode.Unittest3(url);
@@ -44,7 +53,7 @@ public class TestAPItudong {
 
             String getverifylink = url.replace("check_verify_code", "get_verify_code");
             ResponseGet_verify_code resget = callAPI.callAPIGVC(Input.SignUp.phonenumber, getverifylink);
-            String verifycode = resget.data.verifycode;
+            String verifycode = resget.data.verifyCode;
 
             TestCaseCheckverifycode.Unittest1(url, verifycode);
             TestCaseCheckverifycode.Unittest2(url, verifycode);
@@ -79,8 +88,6 @@ public class TestAPItudong {
             Input.SignUp.nhap();
             System.out.println(url);
 
-            //Chọn test case và thực thi test case đã chọn
-            System.out.println("Chọn trường hợp test api log out: ");
             TestCaseLogout.Unittest1(url, loginlink);
             TestCaseLogout.UnitTest2(url, loginlink);
             TestCaseLogout.UnitTest3(url, loginlink);
@@ -108,10 +115,9 @@ public class TestAPItudong {
             System.out.println(url);
             System.out.println(loginlink);
 
-            //Đăng ký tài khoản mới để thực thi test case
             System.out.println("Đăng nhập tài khoản");
             Input.SignUp.nhap();
-            //Chọn test case và thực thi test case đã chọn
+
             TestCaseSetBlock.Unittest1(url, loginlink);
             TestCaseSetBlock.Unittest2(url, loginlink);
             TestCaseSetBlock.Unittest3(url, loginlink);
@@ -119,6 +125,47 @@ public class TestAPItudong {
             TestCaseSetBlock.Unittest8(url, loginlink);
             TestCaseSetBlock.Unittest9(url, loginlink);
             TestCaseSetBlock.Unittest10(url, loginlink);
+        } else if(url.contains("check_new_version")){
+
+        } else if(url.contains("search")) {
+            String loginlink = url.replace("search", "login");
+            System.out.println(url);
+            System.out.println(loginlink);
+            //Đăng nhập tài khoản đã có để thực thi test case
+            System.out.println("Đăng nhập tài khoản: ");
+            Input.Login.nhap();
+
+            TestCaseSearch.Unittest1(url, loginlink);
+            TestCaseSearch.Unittest2(url, loginlink);
+            TestCaseSearch.Unittest3(url, loginlink);
+            TestCaseSearch.Unittest4(url, loginlink);
+            TestCaseSearch.Unittest5(url, loginlink);
+            TestCaseSearch.Unittest6(url, loginlink);
+            TestCaseSearch.Unittest7(url, loginlink);
+            TestCaseSearch.Unittest8(url, loginlink);
+            TestCaseSearch.Unittest9(url, loginlink);
+            TestCaseSearch.Unittest10(url, loginlink);
+            TestCaseSearch.Unittest11(url, loginlink);
+            TestCaseSearch.Unittest12(url, loginlink);
+            TestCaseSearch.Unittest13(url, loginlink);
+            TestCaseSearch.Unittest14(url, loginlink);
+        } else if(url.contains("check_new_version")){
+            String loginlink = url.replace("check_new_version", "login");
+            System.out.println(url);
+            System.out.println(loginlink);
+
+            System.out.println("Đăng nhập tài khoản: ");
+            Input.Login.nhap();
+            ResponseLogin reslog = callAPI.callAPILogin(Input.Login.phonenumber, Input.Login.password, Input.Login.uuid, loginlink);
+            String token = reslog.data.token;
+            TestCaseChecknewversion.Unittest1(url, token);
+            TestCaseChecknewversion.Unittest2(url, token);
+            TestCaseChecknewversion.Unittest3(url, token);
+            TestCaseChecknewversion.Unittest4(url, token);
+            TestCaseChecknewversion.Unittest5(url, token);
+            TestCaseChecknewversion.Unittest6(url, token);
+            TestCaseChecknewversion.Unittest8(url, token);
+
         }
 
     }

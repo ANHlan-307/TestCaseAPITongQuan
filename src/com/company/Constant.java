@@ -1,6 +1,12 @@
 package com.company;
 
 //Lớp Constant chứa các link url gọi tới các API của 6 nhóm đã xây dựng
+//Phonenumber:
+//0956774556
+//Password:
+//tyufrt5
+//UUID:
+//jkafagasdga7
 
 public class Constant {
     // 1 - nhóm Hàn Trung Kiên
@@ -12,7 +18,7 @@ public class Constant {
     // 4 - nhóm Phùng Việt Duy
     public static String DOMAIN_HOST_4 = "https://hust-fb-it4895.herokuapp.com/it4788";
     // 5 - nhóm Cao Văn Duy
-    public static String DOMAIN_HOST_5 = "https://it4895-nhom5.herokuapp.com/it4895/auth";
+    public static String DOMAIN_HOST_5 = "https://it4895-nhom5.herokuapp.com/it4788/auth";
     // 6 - nhóm Lê Xuân Quang
     public static String DOMAIN_HOST_6 = "https://project-facebook-clone.herokuapp.com/it4788/user";
 

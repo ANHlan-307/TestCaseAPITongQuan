@@ -38,38 +38,47 @@ public class ChonTestAPILogin {
             switch (pick) {
 
                 case 1:
+                    System.out.println("Nhập tài khoản đã đăng ký và đã được kiểm tra verify code");
                     Input.Login.nhap();
                     TestCaseLogin.Unittest1(Input.Login.phonenumber, Input.Login.password, Input.Login.uuid, link);
                     break;
                 case 2:
+                    System.out.println("Nhập tài khoản đã đăng ký và đã được kiểm tra verify code");
                     Input.Login.nhap();
                     TestCaseLogin.Unittest2(Input.Login.phonenumber, Input.Login.password, Input.Login.uuid, link);
                     break;
                 case 3:
+                    System.out.println("Nhập tài khoản đã đăng ký và đã được kiểm tra verify code");
                     Input.Login.nhap();
                     TestCaseLogin.Unittest3(Input.Login.phonenumber, Input.Login.password, Input.Login.uuid, link);
                     break;
                 case 4:
+                    System.out.println("Nhập tài khoản đã đăng ký và đã được kiểm tra verify code");
                     Input.Login.nhap();
                     TestCaseLogin.Unittest4(Input.Login.phonenumber, Input.Login.password, Input.Login.uuid, link);
                     break;
                 case 5:
+                    System.out.println("Nhập tài khoản đã đăng ký và đã được kiểm tra verify code");
                     System.out.println("Thiếu tham số số điện thoại và mật khẩu");
                     TestCaseLogin.Unittest5("","", "2e092750-4079-11eb-b378-0242ac130002", link);
                     break;
                 case 6:
+                    System.out.println("Nhập tài khoản đã đăng ký và đã được kiểm tra verify code");
                     Input.Login.nhap();
                     TestCaseLogin.Unittest6(Input.Login.phonenumber, Input.Login.password, Input.Login.uuid, link);
                     break;
                 case 7:
+                    System.out.println("Nhập tài khoản đã đăng ký và đã được kiểm tra verify code");
                     Input.Login.nhap();
                     TestCaseLogin.Unittest7(Input.Login.phonenumber, Input.Login.password, Input.Login.uuid, link);
                     break;
                 case 8:
+                    System.out.println("Nhập tài khoản đã đăng ký và đã được kiểm tra verify code");
                     Input.Login.nhap();
                     TestCaseLogin.Unittest8(Input.Login.phonenumber, Input.Login.password, Input.Login.uuid, link);
                     break;
                 case 9:
+                    System.out.println("Nhập tài khoản đã đăng ký và đã được kiểm tra verify code");
                     Input.Login.nhap();
                     TestCaseLogin.Unittest9(Input.Login.phonenumber, Input.Login.password, Input.Login.uuid, link);
                     break;

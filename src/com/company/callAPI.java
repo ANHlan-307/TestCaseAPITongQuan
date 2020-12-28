@@ -223,4 +223,78 @@ public class callAPI {
             connection.disconnect();
         }
     }
+    public static ResponseSearch callAPISearch(String token, String keyword, String user_id, int index, int count, String linkurl) throws Exception {
+        URL url = new URL(linkurl + "?token=" + token + "&keyword" + keyword + "&user_id" + user_id + "&index" + index + "&count" + count);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("POST");
+        con.setDoOutput(true);
+        try (DataOutputStream writer = new DataOutputStream(con.getOutputStream())) {
+
+            StringBuilder content;
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+            Gson g = new Gson();
+            System.out.println(content.toString());
+            return g.fromJson(content.toString(), ResponseSearch.class);
+        } finally {
+            con.disconnect();
+        }
+    }
+    public static ResponseGet_Saved_Search callAPIGetSavedSearch(String token, int index, int count, String linkurl) throws Exception {
+        URL url = new URL(linkurl + "?token=" + token + "&index" + index + "&count" + count);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("POST");
+        con.setDoOutput(true);
+        try (DataOutputStream writer = new DataOutputStream(con.getOutputStream())) {
+
+            StringBuilder content;
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+            Gson g = new Gson();
+            System.out.println(content.toString());
+            return g.fromJson(content.toString(), ResponseGet_Saved_Search.class);
+        } finally {
+            con.disconnect();
+        }
+    }
+
+    public static ResponseCheck_new_version callAPICNV(String token, String last_update, String linkurl) throws Exception {
+        URL url = new URL(linkurl + "?token=" + token + "&last_update=" + last_update);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("POST");
+        con.setDoOutput(true);
+        try (DataOutputStream writer = new DataOutputStream(con.getOutputStream())) {
+
+            StringBuilder content;
+            try (BufferedReader in = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()))) {
+                String line;
+                content = new StringBuilder();
+                while ((line = in.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+            Gson g = new Gson();
+            System.out.println(content.toString());
+            ResponseCheck_new_version t = g.fromJson(content.toString(), ResponseCheck_new_version.class);
+            return t;
+        } finally {
+            con.disconnect();
+        }
+    }
 }

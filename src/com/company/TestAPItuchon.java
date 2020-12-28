@@ -33,7 +33,7 @@ public class TestAPItuchon {
             String getvflink = url.replace("logout", "get_verify_code");
             String checkvflink = url.replace("logout", "check_verify_code");
             ResponseGet_verify_code resget = callAPI.callAPIGVC(Input.Login.phonenumber, getvflink);
-            ResponseCheck_verify_code rescheck = callAPI.callAPCheckVC(Input.Login.phonenumber, resget.data.verifycode, checkvflink);
+            ResponseCheck_verify_code rescheck = callAPI.callAPCheckVC(Input.Login.phonenumber, resget.data.verifyCode, checkvflink);
 
             //Chọn test case và thực thi test case đã chọn
             System.out.println("Chọn trường hợp test api log out: ");
@@ -73,6 +73,7 @@ public class TestAPItuchon {
         } else if(url.contains("get_verify_code")){
             ChonTestAPIGetverifycode.link = url;
             String signuplink = url.replace("get_verify_code", "signup");
+            System.out.println("Đăng ký tài khoản");
             Input.SignUp.nhap();
             Response res = callAPI.callAPISignUp(Input.SignUp.phonenumber, Input.SignUp.password, Input.SignUp.uuid, signuplink);
             ChonTestAPIGetverifycode.TestGet_verify_code();
@@ -80,12 +81,21 @@ public class TestAPItuchon {
         } else if(url.contains("check_verify_code")){
             ChonTestAPICheck_verify_code.link = url;
             String signuplink = url.replace("check_verify_code", "signup");
+            System.out.println("Đăng ký tài khoản");
             Input.SignUp.nhap();
             Response res = callAPI.callAPISignUp(Input.SignUp.phonenumber, Input.SignUp.password, Input.SignUp.uuid, signuplink);
 
             String getverifylink = url.replace("check_verify_code", "get_verify_code");
             ResponseGet_verify_code resget = callAPI.callAPIGVC(Input.SignUp.phonenumber, getverifylink);
-            ChonTestAPICheck_verify_code.verifycode = resget.data.verifycode;
+            if(url.contains("nhom5")) {
+                ChonTestAPICheck_verify_code.verifycode = resget.data.verifyCode;
+            } else{
+                ChonTestAPICheck_verify_code.verifycode = resget.data.verifycode;
+            }
+            System.out.println(resget.data.verifyCode);
+            System.out.println(resget.data.verifycode);
+
+
 
             ChonTestAPICheck_verify_code.TestCheck_verify_code();;
 
@@ -93,11 +103,36 @@ public class TestAPItuchon {
             ChonTestAPISetAcceptFriend.link = url;
             String loginlink = url.replace("set_accept_friend", "login");
             ChonTestAPISetAcceptFriend.loginlink = loginlink;
+            System.out.println("Đăng nhập tài khoản");
             Input.Login.nhap();
 
             ChonTestAPISetAcceptFriend.TestSetAcceptFriend();
+        } else if(url.contains("search")){
+            ChonTestAPISearch.link = url;
+            String loginlink1 = url.replace("search", "login");
+            System.out.println(url);
+            System.out.println(loginlink1);
+            ChonTestAPISearch.loginlink = loginlink1; //gán link url gọi tới API login
 
+            //Đăng nhập tài khoản đã có để thực thi test case
+            System.out.println("Đăng nhập tài khoản: ");
+            Input.Login.nhap();
 
+            //Chọn test case và thực thi test case đã chọn
+            System.out.println("Chọn trường hợp test api search: ");
+            ChonTestAPISearch.TestChangepass();
+        } else if(url.contains("check_new_version")){
+            ChonTestAPICheckNewVersion.link = url;
+            String loginlink = url.replace("check_new_version", "login");
+            System.out.println(url);
+            System.out.println(loginlink);
+
+            System.out.println("Đăng nhập tài khoản: ");
+            Input.Login.nhap();
+            ResponseLogin reslog = callAPI.callAPILogin(Input.Login.phonenumber, Input.Login.password, Input.Login.uuid, loginlink);
+            String token = reslog.data.token;
+            ChonTestAPICheckNewVersion.token = token;
+            ChonTestAPICheckNewVersion.TestCheck_new_version();
         }
     }
 

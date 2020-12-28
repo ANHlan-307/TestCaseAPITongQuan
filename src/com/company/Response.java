@@ -25,8 +25,9 @@ class ResponseLogin {
 class ResponseGet_verify_code{
     public String code;
     public String message;
-    public Data1 data;
-    public class Data1{
+    public Data data;
+    public class Data {
+        String verifyCode;
         String verifycode;
     }
 }
@@ -39,6 +40,51 @@ class ResponseCheck_verify_code{
         String token;
         String id;
         String active;
+    }
+}
+
+class ResponseSearch {
+    public String code;
+    public String message;
+    public Data3 data;
+    public class Data3{
+        String id;
+        String image;
+        Video video;
+        String like;
+        String comment;
+        String is_liked;
+        Author author;
+        String described;
+    }
+    public class Video{
+        String url;
+        String thump;
+    }
+    public class Author{
+        String id;
+        String username;
+        String avatar;
+    }
+}
+
+class ResponseGet_Saved_Search {
+    public String code;
+    public String message;
+    public Data4 data;
+    public class Data4{
+        String id;
+        String keyword;
+        String created;
+    }
+}
+
+class ResponseCheck_new_version{
+    public String code;
+    public String message;
+    public class Data{
+        String version;
+        String required;
     }
 }
 
